@@ -11,7 +11,7 @@ webhookurl = os.environ['webhookurl']
 webhook = DiscordWebhook(url=webhookurl)
 
 #table for how many visits are needed to send a notification
-milestones = ['200000', '400000', '800000', '1000000']
+milestones = ['133000', '200000', '400000', '800000', '1000000']
 
 
 #function to actually send the notification with the given visit count
@@ -19,7 +19,6 @@ def post(count):
     embed = DiscordEmbed(title='New milestone reached!',
                          description=str(count),
                          color='F55168')
-    DiscordWebhook(title='@everyone')
 
     webhook.add_embed(embed)
     webhook.execute()
