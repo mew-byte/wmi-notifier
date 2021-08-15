@@ -19,13 +19,13 @@ def post(count):
     embed = DiscordEmbed(title='New milestone reached!',
                          description=str(count),
                          color='F55168')
-    DiscordWebhook(url='https://example.com', title='@everyone')
+    DiscordWebhook(title='@everyone')
 
     webhook.add_embed(embed)
     webhook.execute()
 
     ping = Webhook.from_url(webhookurl, adapter=RequestsWebhookAdapter())
-    ping.send("@test")
+    ping.send("@everyone")
 
     print("MILESTONE HIT:" + str(count))
 
